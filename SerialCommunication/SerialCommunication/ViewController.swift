@@ -55,7 +55,8 @@ class ViewController: UIViewController {
             scanButton.setTitle("Stop Scan", for: .normal)
             if centralManager.state == .poweredOn {
 //                centralManager.scanForPeripherals(withServices : nil)
-                centralManager.scanForPeripherals(withServices :nil)
+                centralManager.scanForPeripherals(withServices: nil,options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+
             }else{
                 self.stateLabel.text = "Please switch on the bluetooth to scan devices!"
             }
